@@ -1,0 +1,14 @@
+key difference is the way we access the string:
+
+ruby:
+
+"string"[0..3] -> "stri"
+"string"[0..2] -> "str"
+b.scan('abc').count -> 3
+
+python 3:
+
+"string"[0:3] - > "str"
+"string"[0:2] - > "st"
+
+
