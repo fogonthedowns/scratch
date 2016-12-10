@@ -1,24 +1,30 @@
 import sys
 commands = []
+myAnswer = []
 for line in sys.stdin:
     commands.append(line.split())
 for command in commands:
+    if len(command) > 1:
+        digit = int(command[1])
+    if command[0].isdigit():
+        continue
     if command[0] == 'insert':
-        print('I')
+        myAnswer.insert(digit,int(command[2]))
         # implement insert
     elif command[0] == 'print':
-        # print
-        print('p')
+        print(myAnswer)
+    elif command[0] == 'sort':
+        # remove
+        myAnswer.sort()
     elif command[0] == 'remove':
         # remove
-        print('D')
+        myAnswer.remove(digit)
     elif command[0] == 'append':
         # append
-        print('A')
+        myAnswer.append(digit)
     elif command[0] == 'pop':
         # pop
-        print('P')
+        myAnswer.pop()
     elif command[0] == 'reverse':
         # reverse
-        print('r')
-print(commands)
+        myAnswer.reverse()
